@@ -1,8 +1,6 @@
 package com.bimarsh.tdd;
 
-public class Dollar {
-
-    double amount;
+public class Dollar extends MoneyConversion {
 
     public Dollar(double amount){
         this.amount = amount;
@@ -17,8 +15,4 @@ public class Dollar {
         return amount;
     }
 
-    public boolean equals(Object object){
-        Dollar dollar = (Dollar) object;
-        return amount==dollar.amount;
-    }
 }

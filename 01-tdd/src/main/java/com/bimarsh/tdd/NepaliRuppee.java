@@ -1,9 +1,7 @@
 package com.bimarsh.tdd;
 
 //Built class 1st
-public class NepaliRuppee {
-
-    private double amount;
+public class NepaliRuppee extends MoneyConversion {
 
     //constructor -  2nd
     public NepaliRuppee(double amount){
@@ -14,9 +12,5 @@ public class NepaliRuppee {
         return new NepaliRuppee(amount*conversionRate);
     }
 
-    public boolean equals(Object object){
-        NepaliRuppee nepaliRuppee = (NepaliRuppee) object;
-        return nepaliRuppee.amount == this.amount;
-    }
 
 }
