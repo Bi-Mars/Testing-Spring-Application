@@ -9,9 +9,8 @@ public class Dollar {
 
     }
 
-    public void multiply(float rate){
-        amount = amount * rate;
-
+    public Dollar multiply(float rate){
+        return new Dollar(amount*rate);
     }
 
     public double getAmount(){
