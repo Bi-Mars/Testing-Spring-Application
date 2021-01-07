@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /*
  * Created By Bimarsh Sharma on 2021-01-05
+ * Dollar and Nepali Rupees have similar characterisitcs like equals method:
+ * Don't have any direct reference to subclasses
  */
 public class MoneyTest {
 
