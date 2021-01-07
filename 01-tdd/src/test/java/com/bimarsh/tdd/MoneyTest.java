@@ -38,4 +38,9 @@ public class MoneyTest {
         assertEquals(new NepaliRuppee(5), new NepaliRuppee(5));
         assertNotEquals(new NepaliRuppee(10), new NepaliRuppee(15));
     }
+
+    @Test
+    void testEqualityDollarNepaliRuppee(){
+        assertNotEquals(new Dollar(5), new NepaliRuppee(5));
+    }
 }

@@ -6,7 +6,8 @@ public class MoneyConversion {
 
     public boolean equals(Object object){
         MoneyConversion moneyConversion = (MoneyConversion) object;
-        return  this.amount == moneyConversion.amount;
+        return  this.amount == moneyConversion.amount
+                                && getClass().equals(object.getClass());
     }
 
 }
