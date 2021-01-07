@@ -12,31 +12,32 @@ public class MoneyTest {
 
     @Test
     void testMultipyDollar(){
-        Dollar five = new Dollar(5);
+       // Dollar five = new Dollar(5);
+        MoneyConversion five = MoneyConversion.dollar(5); // use static method
        //Dollar product = five.multiply(2);
-        assertEquals(new Dollar(10), five.multiplyDollar(2));
+        assertEquals(MoneyConversion.dollar(10), five.convertCurr(2));
        // product = five.multiply(3);
-        assertEquals(new Dollar(15), five.multiplyDollar(3));
+        assertEquals(MoneyConversion.dollar(15), five.convertCurr(3));
     }
 
     @Test
     void testEqualityDollar(){
         // Same: assertTrue(new Dollar(5).equals(new Dollar(5)));
-        assertEquals(new Dollar(5), new Dollar(5));
-        assertNotEquals(new Dollar(5), new Dollar(8));
+        assertEquals(MoneyConversion.dollar(5), MoneyConversion.dollar(5));
+        assertNotEquals(MoneyConversion.dollar(5), MoneyConversion.dollar(8));
     }
 
     @Test
     void testMultiplicationNepaliRupee(){
-        NepaliRuppee nepaliRuppee = new NepaliRuppee(2);
-        assertEquals(new NepaliRuppee(200), nepaliRuppee.multiplyNepaliRuppee(100));
-        assertEquals(new NepaliRuppee(100), nepaliRuppee.multiplyNepaliRuppee(50));
+        MoneyConversion nepaliRuppee = MoneyConversion.nepaliRuppee(2);
+        assertEquals(MoneyConversion.nepaliRuppee(200), nepaliRuppee.convertCurr(100));
+        assertEquals(MoneyConversion.nepaliRuppee(100), nepaliRuppee.convertCurr(50));
     }
 
     @Test
     void testEqualityNepaliRuppe(){
-        assertEquals(new NepaliRuppee(5), new NepaliRuppee(5));
-        assertNotEquals(new NepaliRuppee(10), new NepaliRuppee(15));
+        assertEquals(MoneyConversion.nepaliRuppee(5), MoneyConversion.nepaliRuppee(5));
+        assertNotEquals(MoneyConversion.nepaliRuppee(10), MoneyConversion.nepaliRuppee(15));
     }
 
     @Test

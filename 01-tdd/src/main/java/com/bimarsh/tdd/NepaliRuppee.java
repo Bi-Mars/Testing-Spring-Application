@@ -8,7 +8,7 @@ public class NepaliRuppee extends MoneyConversion {
         this.amount = amount;
     }
 
-    public NepaliRuppee multiplyNepaliRuppee(float conversionRate){
+    public MoneyConversion convertCurr(float conversionRate){
         return new NepaliRuppee(amount*conversionRate);
     }
 

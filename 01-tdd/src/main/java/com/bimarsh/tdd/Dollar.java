@@ -7,7 +7,7 @@ public class Dollar extends MoneyConversion {
 
     }
 
-    public Dollar multiplyDollar(float rate){
+    public MoneyConversion convertCurr(float rate){
         return new Dollar(amount*rate);
     }
 
