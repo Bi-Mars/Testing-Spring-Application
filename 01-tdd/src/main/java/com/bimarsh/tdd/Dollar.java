@@ -9,11 +9,16 @@ public class Dollar {
 
     }
 
-    public Dollar multiply(float rate){
+    public Dollar multiplyDollar(float rate){
         return new Dollar(amount*rate);
     }
 
     public double getAmount(){
         return amount;
+    }
+
+    public boolean equals(Object object){
+        Dollar dollar = (Dollar) object;
+        return amount==dollar.amount;
     }
 }
