@@ -43,4 +43,13 @@ public class MoneyTest {
         assertEquals("NRS", MoneyConversion.nepaliRuppee(5).getCurrency());
     }
 
+    @Test
+    void testAdditionSameCurrency(){
+        MoneyConversion five = MoneyConversion.dollar(5);
+        Expression sum = five.add(five);
+        Bank bank = new Bank();
+        MoneyConversion reduced = bank.reduce(sum, "USD");
+        assertEquals(MoneyConversion.dollar(10), reduced);
+    }
+
 }

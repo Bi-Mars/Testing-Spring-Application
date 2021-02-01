@@ -1,6 +1,6 @@
 package com.bimarsh.tdd;
 
-public class MoneyConversion {
+public class MoneyConversion implements Expression {
 
     // private field cannot be inherited
    protected double amount;
@@ -27,6 +27,10 @@ public class MoneyConversion {
        return new MoneyConversion(amount, "NRS");
    }
 
+   public Expression add(MoneyConversion addMoney){
+        return new MoneyConversion(amount+addMoney.amount, currency);
+   }
+
     public boolean equals(Object object){
         MoneyConversion moneyConversion = (MoneyConversion) object;
         // dollar should not equal to nrs; thus check the currency
@@ -41,5 +45,7 @@ public class MoneyConversion {
                 ", currency='" + currency+"\'" +
                 '}';
     }
+
+
 
 }
