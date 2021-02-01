@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class MoneyTest {
 
     @Test
-    void testMultipyDollar(){
+    void testConvertCurrDollar(){
        // Dollar five = new Dollar(5);
         MoneyConversion five = MoneyConversion.dollar(5); // use static method
        //Dollar product = five.multiply(2);
@@ -30,7 +30,7 @@ public class MoneyTest {
     }
 
     @Test
-    void testMultiplicationNepaliRupee(){
+    void testConvertCurrNepaliRupee(){
         MoneyConversion nepaliRuppee = MoneyConversion.nepaliRuppee(2);
         assertEquals(MoneyConversion.nepaliRuppee(200), nepaliRuppee.convertCurr(100));
         assertEquals(MoneyConversion.nepaliRuppee(100), nepaliRuppee.convertCurr(50));
@@ -44,6 +44,13 @@ public class MoneyTest {
 
     @Test
     void testEqualityDollarNepaliRuppee(){
-        assertNotEquals(new Dollar(5), new NepaliRuppee(5));
+        assertNotEquals(MoneyConversion.dollar(5), MoneyConversion.nepaliRuppee(5));
     }
+
+    @Test
+    void testCurrency(){
+        assertEquals("USD", MoneyConversion.dollar(1).getCurrency());
+        assertEquals("NRS", MoneyConversion.nepaliRuppee(5).getCurrency());
+    }
+
 }

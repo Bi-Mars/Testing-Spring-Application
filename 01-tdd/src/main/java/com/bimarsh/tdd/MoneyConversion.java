@@ -1,23 +1,45 @@
 package com.bimarsh.tdd;
 
-public abstract class MoneyConversion {
+public class MoneyConversion {
 
+    // private field cannot be inherited
    protected double amount;
+   protected  String currency;
 
-   public abstract MoneyConversion convertCurr(float rate);
+    public MoneyConversion(double amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
+
+    protected String getCurrency(){
+        return currency;
+    }
+
+   public MoneyConversion convertCurr(float rate){
+        return new MoneyConversion(amount*rate, this.currency);
+   }
 
    public static MoneyConversion dollar(double amount){
-       return new Dollar(amount);
+       return new Dollar(amount, "USD");
    }
 
    public static MoneyConversion nepaliRuppee(double amount){
-       return new NepaliRuppee(amount);
+       return new NepaliRuppee(amount, "NRS");
    }
 
     public boolean equals(Object object){
         MoneyConversion moneyConversion = (MoneyConversion) object;
+        // dollar should not equal to nrs; thus check the currency
         return  this.amount == moneyConversion.amount
-                                && getClass().equals(object.getClass());
+                                && this.currency == moneyConversion.currency;
+    }
+
+    @Override
+    public String toString(){
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency+"\'" +
+                '}';
     }
 
 }
