@@ -20,11 +20,11 @@ public class MoneyConversion {
    }
 
    public static MoneyConversion dollar(double amount){
-       return new Dollar(amount, "USD");
+       return new MoneyConversion(amount, "USD");
    }
 
    public static MoneyConversion nepaliRuppee(double amount){
-       return new NepaliRuppee(amount, "NRS");
+       return new MoneyConversion(amount, "NRS");
    }
 
     public boolean equals(Object object){
