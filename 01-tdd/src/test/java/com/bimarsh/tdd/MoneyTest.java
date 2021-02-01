@@ -1,5 +1,6 @@
 package com.bimarsh.tdd;
 
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -50,6 +51,30 @@ public class MoneyTest {
         Bank bank = new Bank();
         MoneyConversion reduced = bank.reduce(sum, "USD");
         assertEquals(MoneyConversion.dollar(10), reduced);
+    }
+
+    @Test
+    void testPlusReturnSum(){
+        MoneyConversion five = MoneyConversion.dollar(5);
+        Expression result = five.add(five);
+        Sum sum = (Sum) result;
+        assertEquals(five, sum.augmend);
+        assertEquals(five, sum.addmend);
+    }
+
+    @Test
+    void testReduceSum(){
+        Expression sum = new Sum(MoneyConversion.dollar(3), MoneyConversion.dollar(4));
+        Bank bank = new Bank();
+        MoneyConversion result = bank.reduce(sum, "USD");
+        assertEquals(MoneyConversion.dollar(7), result);
+    }
+
+    @Test
+    void testReduceMoney(){
+        Bank bank = new Bank();
+        MoneyConversion result = bank.reduce(MoneyConversion.dollar(1), "USD");
+        assertEquals(MoneyConversion.dollar(1), result);
     }
 
 }

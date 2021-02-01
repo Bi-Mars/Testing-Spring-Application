@@ -19,6 +19,11 @@ public class MoneyConversion implements Expression {
         return new MoneyConversion(amount*rate, this.currency);
    }
 
+   @Override
+   public MoneyConversion reduce(String toCurrency){
+        return this;
+   }
+
    public static MoneyConversion dollar(double amount){
        return new MoneyConversion(amount, "USD");
    }
@@ -28,7 +33,7 @@ public class MoneyConversion implements Expression {
    }
 
    public Expression add(MoneyConversion addMoney){
-        return new MoneyConversion(amount+addMoney.amount, currency);
+    return new Sum(this, addMoney);
    }
 
     public boolean equals(Object object){

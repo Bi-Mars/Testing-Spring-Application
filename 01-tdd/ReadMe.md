@@ -38,3 +38,11 @@ Example:
 3. Concerns:
    * Dollar side effects?
     * Money Rounding?
+   
+___Terminology___
+
+Augend - First Value in an addition operation.
+   * '3' in 3 + 6 
+
+Addend - Second Value in an addition operation.
+   * '6' in 3 + 6 
